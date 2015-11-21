@@ -119,7 +119,7 @@ public final class FakeSMTP {
 	private static InetAddress getBindAddress() throws UnknownHostException {
 		String bindAddressStr = ArgsHandler.INSTANCE.getBindAddress();
 		if (bindAddressStr == null || bindAddressStr.isEmpty()) {
-			return null;
+			return InetAddress.getByName("127.0.0.1");
 		}
 		return InetAddress.getByName(bindAddressStr);
 	}
